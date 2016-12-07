@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- launcehr app에 전달되는 appwidget 운용규칙.. -->
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="80dp"
+    android:minHeight="146dp"
+    android:updatePeriodMillis="1800000"
+    android:initialLayout="@layout/widget_layout"
+    >
+
+</appwidget-provider>

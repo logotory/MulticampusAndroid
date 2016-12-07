@@ -1,1 +1,1 @@
-include ':app', ':ch2-meterial'
+include ':app', ':ch2-meterial', ':ch3-aidl', ':ch3_aldi_client', ':ch3-appwidget'
