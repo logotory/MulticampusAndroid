@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/ch4-camera" />
             <option value="$PROJECT_DIR$/ch4-contacts-sms" />
             <option value="$PROJECT_DIR$/ch5-lbs" />
+            <option value="$PROJECT_DIR$/ch6-http" />
+            <option value="$PROJECT_DIR$/ch6-socket" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

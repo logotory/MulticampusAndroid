@@ -16,6 +16,8 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -110,6 +112,9 @@ public class MainActivity extends AppCompatActivity implements
         super.onResume();
         //location provider 이용시도..
         googleApiClient.connect();//결과는 callback 으로..
+        if(map == null) {
+            ((SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map_view)).getMapAsync(this);
+        }
 
     }
 
@@ -128,6 +133,7 @@ public class MainActivity extends AppCompatActivity implements
 
         if (location != null) {
             updateInfo(location);
+            showMap(location);
         }
     }
 
@@ -139,5 +145,12 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         toast("onConnectionFailed");
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        map = googleMap;
+        UiSettings settings = map.getUiSettings();
+        settings.setZoomControlsEnabled(true);
     }
 }
